@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +22,15 @@ interface ProductCardProps {
   index?: number
 }
 
+function generateSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim()
+}
+
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addToEnquiry } = useEnquiry()
 
@@ -28,6 +38,8 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     addToEnquiry(product)
     toast.success(`${product.name} added to enquiry!`)
   }
+
+  const productSlug = generateSlug(product.name)
 
   return (
     <Card
@@ -37,7 +49,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       }}
     >
       <CardContent className="p-0 h-full flex flex-col">
-        <div className="relative overflow-hidden">
+        <Link href={`/products/${productSlug}`} className="relative overflow-hidden block">
           <Image
             src={product.image || "/placeholder.svg"}
             alt={`${product.name} - Aquaved RO water purifier`}
@@ -47,12 +59,14 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             loading="lazy"
           />
           <Badge className="absolute top-4 left-4 bg-[#03045e] text-white">{product.category}</Badge>
-        </div>
+        </Link>
 
         <div className="p-6 flex-1 flex flex-col">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#03045e] transition-colors">
-            {product.name}
-          </h3>
+          <Link href={`/products/${productSlug}`}>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#03045e] transition-colors cursor-pointer">
+              {product.name}
+            </h3>
+          </Link>
 
           <p className="text-gray-600 mb-4 text-sm leading-relaxed flex-1">{product.description}</p>
 

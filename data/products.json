@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "slug": "premium-kitchen-ro-system",
+    "name": "Premium Kitchen RO System",
+    "category": "Domestic RO",
+    "price": "₹18,999",
+    "originalPrice": "₹22,999",
+    "images": ["/aquaved-ro-kitchen.jpeg", "/aquaved-nextgen-led.jpeg", "/aquaved-smart-led.jpeg"],
+    "description": "Advanced RO system with digital display and copper alkaline technology for kitchen countertops. Perfect for modern homes with space-saving design.",
+    "features": ["Digital Display", "Copper Alkaline", "Multi-Stage Filtration"],
+    "specs": {
+      "Capacity": "10L/hr",
+      "Storage": "8L Tank",
+      "Stages": "7-Stage Purification",
+      "Technology": "RO + UV + UF + TDS",
+      "Power": "24V SMPS",
+      "Warranty": "1 Year"
+    },
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "slug": "fusion-ro-water-purifier",
+    "name": "Fusion RO Water Purifier",
+    "category": "Domestic RO",
+    "price": "₹16,999",
+    "originalPrice": "₹19,999",
+    "images": ["/aquaved-fusion-ro.jpeg", "/aquaved-transparent-ro.jpeg"],
+    "description": "Sleek white RO system with copper accents and advanced reverse osmosis technology.",
+    "features": ["RO + UV + UF + TDS", "Copper Technology", "Wall Mounted"],
+    "specs": {
+      "Capacity": "12L/hr",
+      "Storage": "10L Tank",
+      "Stages": "6-Stage Purification",
+      "Technology": "RO + UV + UF",
+      "Power": "24V SMPS",
+      "Warranty": "1 Year"
+    },
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "slug": "mineral-water-purifier",
+    "name": "Mineral Water Purifier",
+    "category": "Domestic RO",
+    "price": "₹14,999",
+    "originalPrice": "₹17,999",
+    "images": ["/aquaved-mineral-water.jpeg", "/aquaved-mineral-transparent.jpeg"],
+    "description": "Compact mineral water purifier with Dr.AquaBerry technology and blue accent design.",
+    "features": ["Mineral Enhancement", "Compact Design", "Dr.AquaBerry Tech"],
+    "specs": {
+      "Capacity": "8L/hr",
+      "Storage": "7L Tank",
+      "Stages": "5-Stage Purification",
+      "Technology": "RO + Mineral",
+      "Power": "24V SMPS",
+      "Warranty": "1 Year"
+    },
+    "inStock": true
+  },
+  {
+    "id": 13,
+    "slug": "commercial-ro-plant",
+    "name": "Commercial RO Plant",
+    "category": "Commercial RO",
+    "price": "₹45,999",
+    "originalPrice": "₹52,999",
+    "images": ["/aquaved-commercial-plant.jpeg", "/aquaved-transparent-system.jpeg"],
+    "description": "Heavy-duty commercial RO plant with three-stage filtration for industrial applications.",
+    "features": ["Commercial Grade", "Three Stage", "Industrial Use"],
+    "specs": {
+      "Capacity": "100L/hr",
+      "Storage": "50L Tank",
+      "Stages": "3-Stage Commercial",
+      "Technology": "Industrial RO",
+      "Power": "220V AC",
+      "Warranty": "2 Years"
+    },
+    "inStock": true
+  }
+]
