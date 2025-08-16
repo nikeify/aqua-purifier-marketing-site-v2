@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Poppins } from "next/font/google"
 import "./globals.css"
 
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
   keywords:
     "RO water purifier Mumbai, water purification system, Aquaved RO, Vedant Enterprises, water filter installation, RO spare parts, water purifier service, home water purifier, commercial RO system, water treatment Mumbai",
   authors: [{ name: "Vedant Enterprises" }],
-  viewport: "width=device-width, initial-scale=1",
   openGraph: {
     title: "Aquaved - Premium RO Water Purifiers | Vedant Enterprises",
     description:
@@ -66,6 +65,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
