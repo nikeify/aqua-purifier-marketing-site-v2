@@ -1,28 +1,13 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import Image from "next/image"
-import Link from "next/link"
-import { ChevronRight, ShoppingCart, Heart, Share2 } from "lucide-react"
+import { ShoppingCart, Heart, Share2 } from "lucide-react"
 import { Header } from "@/components/header"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { SpecsTable } from "@/components/product/specs-table"
+import { ProductGallery } from "@/components/product/product-gallery"
+import { RelatedProducts } from "@/components/product/related-products"
+import type { Product, ProductPageProps } from "@/types/product"
 import productsData from "@/data/products.json"
-
-interface Product {
-  id: number
-  slug: string
-  name: string
-  category: string
-  price: string
-  originalPrice?: string
-  images: string[]
-  description: string
-  features: string[]
-  specs: Record<string, string>
-  inStock: boolean
-}
-
-interface ProductPageProps {
-  params: { slug: string }
-}
 
 function getProduct(slug: string): Product | undefined {
   return productsData.find((product) => product.slug === slug)
@@ -60,102 +45,6 @@ export async function generateStaticParams() {
   }))
 }
 
-function ProductGallery({ images, name }: { images: string[]; name: string }) {
-  return (
-    <div className="space-y-4">
-      <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
-        <Image
-          src={images[0] || "/placeholder.svg"}
-          alt={name}
-          width={600}
-          height={600}
-          className="h-full w-full object-cover object-center"
-          priority
-        />
-      </div>
-      {images.length > 1 && (
-        <div className="grid grid-cols-3 gap-4">
-          {images.slice(1).map((image, index) => (
-            <div key={index} className="aspect-square overflow-hidden rounded-lg bg-gray-100">
-              <Image
-                src={image || "/placeholder.svg"}
-                alt={`${name} view ${index + 2}`}
-                width={200}
-                height={200}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-function Breadcrumbs({ product }: { product: Product }) {
-  return (
-    <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
-      <Link href="/" className="hover:text-[#03045e]">
-        Home
-      </Link>
-      <ChevronRight className="h-4 w-4" />
-      <Link href="/products" className="hover:text-[#03045e]">
-        Products
-      </Link>
-      <ChevronRight className="h-4 w-4" />
-      <span className="text-gray-900">{product.name}</span>
-    </nav>
-  )
-}
-
-function SpecsTable({ specs }: { specs: Record<string, string> }) {
-  return (
-    <div className="bg-gray-50 rounded-lg p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Specifications</h3>
-      <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {Object.entries(specs).map(([key, value]) => (
-          <div key={key} className="border-b border-gray-200 pb-2">
-            <dt className="text-sm font-medium text-gray-500">{key}</dt>
-            <dd className="text-sm text-gray-900">{value}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  )
-}
-
-function RelatedProducts({ products }: { products: Product[] }) {
-  if (products.length === 0) return null
-
-  return (
-    <section className="mt-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <Link key={product.id} href={`/products/${product.slug}`} className="group">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <Image
-                  src={product.images[0] || "/placeholder.svg"}
-                  alt={product.name}
-                  width={300}
-                  height={300}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-gray-900 group-hover:text-[#03045e]">{product.name}</h3>
-                <p className="text-sm text-gray-600 mt-1">{product.category}</p>
-                <p className="text-lg font-bold text-[#03045e] mt-2">{product.price}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 export default function ProductDetailPage({ params }: ProductPageProps) {
   const product = getProduct(params.slug)
 
@@ -173,7 +62,6 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         <Breadcrumbs product={product} />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Product Gallery */}
           <ProductGallery images={product.images} name={product.name} />
 
           {/* Product Info */}
@@ -228,12 +116,10 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           </div>
         </div>
 
-        {/* Specifications */}
         <div className="mt-16">
           <SpecsTable specs={product.specs} />
         </div>
 
-        {/* Related Products */}
         <RelatedProducts products={relatedProducts} />
       </main>
     </div>

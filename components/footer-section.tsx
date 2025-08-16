@@ -2,12 +2,9 @@
 
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, Youtube, MessageCircle } from "lucide-react"
+import Link from "next/link"
 
-interface FooterSectionProps {
-  onScrollToSection: (sectionId: string) => void
-}
-
-export function FooterSection({ onScrollToSection }: FooterSectionProps) {
+export function FooterSection() {
   return (
     <footer
       id="contact"
@@ -26,17 +23,21 @@ export function FooterSection({ onScrollToSection }: FooterSectionProps) {
             <div className="space-y-3">
               <Button
                 size="sm"
-                className="bg-white text-[#03045e] hover:bg-gray-100 hover:text-[#03045e] w-full justify-start rounded-full transition-all duration-300 transform hover:scale-105"
+                className="bg-white text-[#03045e] hover:bg-gray-100 hover:text-[#03045e] w-full justify-start rounded-full transition-all duration-300 transform hover:scale-105 text-xs sm:text-sm px-3 py-2"
               >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now: +91 98765 43210
+                <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
+                <span className="truncate">
+                  <span className="hidden sm:inline">Call Now: </span>
+                  <span className="sm:hidden">Call: </span>
+                  +91 98765 43210
+                </span>
               </Button>
               <Button
                 size="sm"
-                className="bg-[#03045e] hover:bg-[#02044b] text-white w-full justify-start rounded-full transition-all duration-300 border border-white"
+                className="bg-[#03045e] hover:bg-[#02044b] text-white w-full justify-start rounded-full transition-all duration-300 border border-white text-xs sm:text-sm px-3 py-2"
               >
-                <Mail className="w-4 h-4 mr-2" />
-                Email Us
+                <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
+                <span className="truncate">Email Us</span>
               </Button>
             </div>
             <div className="mt-6">
@@ -67,16 +68,38 @@ export function FooterSection({ onScrollToSection }: FooterSectionProps) {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "Products", "Services", "About Us"].map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => onScrollToSection(link.toLowerCase().replace(" ", ""))}
-                    className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
-                  >
-                    {link}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/"
+                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                >
+                  About Us
+                </Link>
+              </li>
             </ul>
           </div>
 
