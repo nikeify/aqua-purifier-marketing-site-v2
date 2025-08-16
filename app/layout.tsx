@@ -80,6 +80,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" href="/modern-ro-water-purifier.png" as="image" />
+        <link rel="preload" href="/aquaved-ro-kitchen.jpeg" as="image" />
+        <link rel="preload" href="/aquaved-fusion-ro.jpeg" as="image" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

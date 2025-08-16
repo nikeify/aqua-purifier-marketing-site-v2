@@ -165,6 +165,22 @@ html {
   }
 }
 
+/* Adding simple fade-in animation for hero section */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }

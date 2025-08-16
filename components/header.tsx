@@ -1,6 +1,3 @@
-"use client"
-
-import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Phone } from "lucide-react"
 import { AnimatedLogo } from "@/components/animated-logo"
@@ -11,29 +8,8 @@ interface HeaderProps {
 }
 
 export function Header({ currentPage = "home" }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    let ticking = false
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50)
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-sm"
-      }`}
-    >
+    <nav className="fixed top-0 w-full z-50 bg-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div>
