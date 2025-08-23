@@ -1,48 +1,45 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ScrollAnimationWrapper } from "@/components/scroll-animations"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollAnimationWrapper id="about-images" animation="slide-right">
             <div className="grid grid-cols-2 gap-4">
-              <img
+              <Image
                 src="/aquaved-transparent-ro.jpeg"
                 alt="Transparent RO System showing internal components"
                 className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                loading="lazy"
-                decoding="async"
-                width="300"
-                height="400"
+                width={300}
+                height={400}
+                quality={80}
               />
-              <img
+              <Image
                 src="/aquaved-smart-led.jpeg"
                 alt="Smart LED Display Water Purifier"
                 className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mt-8"
-                loading="lazy"
-                decoding="async"
-                width="300"
-                height="400"
+                width={300}
+                height={400}
+                quality={80}
               />
-              <img
+              <Image
                 src="/aquaved-copper-transparent.jpeg"
                 alt="Copper Transparent RO System"
                 className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 -mt-8"
-                loading="lazy"
-                decoding="async"
-                width="300"
-                height="400"
+                width={300}
+                height={400}
+                quality={80}
               />
-              <img
+              <Image
                 src="/aquaved-nextgen-led.jpeg"
                 alt="Next Generation LED Technology Water Purifier"
                 className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                loading="lazy"
-                decoding="async"
-                width="300"
-                height="400"
+                width={300}
+                height={400}
+                quality={80}
               />
             </div>
           </ScrollAnimationWrapper>

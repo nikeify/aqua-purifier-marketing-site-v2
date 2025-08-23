@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -76,14 +77,14 @@ export function FeaturedProducts() {
                 <div key={index} className="w-full flex-shrink-0">
                   <Card className="mx-4 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white">
                     <div className="aspect-[4/3] overflow-hidden relative group">
-                      <img
+                      <Image
                         src={product.image || "/placeholder.svg"}
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        loading={index < 2 ? "eager" : "lazy"}
-                        decoding="async"
-                        width="400"
-                        height="300"
+                        width={400}
+                        height={300}
+                        quality={80}
+                        priority={index < 2}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#03045e]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
