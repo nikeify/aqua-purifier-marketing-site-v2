@@ -50,14 +50,16 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     >
       <CardContent className="flex h-full flex-col p-0">
         <Link href={`/products/${productSlug}`} className="relative block overflow-hidden">
-          <Image
-            src={product.image || "/placeholder.svg"}
-            alt={`${product.name} - Aquaved RO water purifier`}
-            width={400}
-            height={300}
-            className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
-            loading="lazy"
-          />
+          <div className="relative w-full aspect-[4/3]">
+            <Image
+              src={product.image || "/placeholder.svg"}
+              alt={`${product.name} - Aquaved RO water purifier`}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="(max-width: 640px) 100vw, 400px"
+              quality={80}
+            />
+          </div>
           <Badge className="absolute top-4 left-4 bg-[#03045e] text-white">
             {product.category}
           </Badge>

@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { SpecsTable } from "@/components/product/specs-table"
 import { ProductGallery } from "@/components/product/product-gallery"
 import { RelatedProducts } from "@/components/product/related-products"
-import type { Product, ProductPageProps } from "@/types/product"
+import type { Product } from "@/types/product"
 import productsData from "@/data/products.json"
 
 function getProduct(slug: string): Product | undefined {
@@ -21,8 +21,13 @@ function getRelatedProducts(currentProduct: Product): Product[] {
     .slice(0, 3)
 }
 
-export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const product = getProduct(params.slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const product = getProduct(slug)
 
   if (!product) {
     return {
@@ -47,8 +52,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function ProductDetailPage({ params }: ProductPageProps) {
-  const product = getProduct(params.slug)
+export default async function ProductPage({
+  params,
+}: {
+  // accept params as a Promise so it satisfies the generated PageProps type
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const product = getProduct(slug)
 
   if (!product) {
     notFound()

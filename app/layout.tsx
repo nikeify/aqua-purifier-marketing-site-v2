@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   title: "Aquaved - Pure Water, Pure Trust | Premium RO Water Purifiers",
   description:
     "Vedant Enterprises (Aquaved) - Trusted manufacturer, trader, and service provider of RO water purifiers and spare parts since 2012. 20,000+ happy customers across Mumbai, Maharashtra.",
-  generator: "v0.app",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -66,8 +65,6 @@ export const metadata: Metadata = {
     },
   },
 }
-// add this to resolve OG/twitter image URLs correctly (uses env var or fallback)
-export const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://aquaved.com")
 
 export const viewport: Viewport = {
   width: "device-width",
