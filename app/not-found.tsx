@@ -4,30 +4,33 @@ import { Header } from "@/components/header"
 import { FooterSection } from "@/components/footer-section"
 import Link from "next/link"
 
+const messageOops = "Oops! The page you're looking for seems to have evaporated."
+const messageFindPath = "Just like how we purify water, let's help you find the right path."
+
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       <Header />
 
-      <main className="pt-16 flex items-center justify-center min-h-screen">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <main className="flex min-h-screen items-center justify-center pt-16">
+        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h1 className="text-9xl font-bold text-transparent bg-gradient-to-br from-[#03045e] to-blue-400 bg-clip-text">
+            <h1 className="bg-gradient-to-br from-[#03045e] to-blue-400 bg-clip-text text-9xl font-bold text-transparent">
               404
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#03045e] to-blue-400 mx-auto mt-4 rounded-full"></div>
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#03045e] to-blue-400"></div>
           </div>
 
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Page Not Found</h2>
-            <p className="text-lg text-gray-600 mb-2">Oops! The page you're looking for seems to have evaporated.</p>
-            <p className="text-gray-500">Just like how we purify water, let's help you find the right path.</p>
+            <h2 className="mb-4 text-3xl font-bold text-gray-900">Page Not Found</h2>
+            <p className="mb-2 text-lg text-gray-600">{messageOops}</p>
+            <p className="text-gray-500">{messageFindPath}</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/">
-              <Button className="bg-[#03045e] hover:bg-[#02044b] text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                <Home className="w-5 h-5 mr-2" />
+              <Button className="transform rounded-full bg-[#03045e] px-8 py-3 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#02044b]">
+                <Home className="mr-2 h-5 w-5" />
                 Go Home
               </Button>
             </Link>
@@ -35,23 +38,23 @@ export default function NotFound() {
             <Link href="/products">
               <Button
                 variant="outline"
-                className="border-[#03045e] text-[#03045e] hover:bg-[#03045e] hover:text-white px-8 py-3 rounded-full transition-all duration-300 bg-transparent"
+                className="rounded-full border-[#03045e] bg-transparent px-8 py-3 text-[#03045e] transition-all duration-300 hover:bg-[#03045e] hover:text-white"
               >
-                <Search className="w-5 h-5 mr-2" />
+                <Search className="mr-2 h-5 w-5" />
                 Browse Products
               </Button>
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">Popular Pages</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg">
+            <h3 className="mb-6 text-xl font-semibold text-gray-900">Popular Pages</h3>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Link
                 href="/products"
-                className="flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+                className="group flex items-center rounded-lg p-4 transition-colors hover:bg-gray-50"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-[#03045e] group-hover:text-white transition-colors">
-                  <Search className="w-6 h-6" />
+                <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 transition-colors group-hover:bg-[#03045e] group-hover:text-white">
+                  <Search className="h-6 w-6" />
                 </div>
                 <div className="text-left">
                   <h4 className="font-medium text-gray-900">Our Products</h4>
@@ -61,10 +64,10 @@ export default function NotFound() {
 
               <Link
                 href="/services"
-                className="flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+                className="group flex items-center rounded-lg p-4 transition-colors hover:bg-gray-50"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-[#03045e] group-hover:text-white transition-colors">
-                  <ArrowLeft className="w-6 h-6" />
+                <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 transition-colors group-hover:bg-[#03045e] group-hover:text-white">
+                  <ArrowLeft className="h-6 w-6" />
                 </div>
                 <div className="text-left">
                   <h4 className="font-medium text-gray-900">Our Services</h4>

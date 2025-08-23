@@ -9,10 +9,10 @@ export function useScrollAnimation() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setVisibleElements((prev) => new Set(prev).add(entry.target.id))
+            setVisibleElements(prev => new Set(prev).add(entry.target.id))
           }
         })
       },
@@ -21,7 +21,7 @@ export function useScrollAnimation() {
 
     // Observe all elements with data-animate attribute
     const elements = document.querySelectorAll("[data-animate]")
-    elements.forEach((el) => observer.observe(el))
+    elements.forEach(el => observer.observe(el))
 
     return () => observer.disconnect()
   }, [])

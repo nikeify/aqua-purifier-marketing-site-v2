@@ -4,7 +4,10 @@ import { ScrollAnimationWrapper } from "@/components/scroll-animations"
 
 export function ServicesSection() {
   const services = [
-    { title: "Installation", desc: "Professional installation services with proper setup and testing" },
+    {
+      title: "Installation",
+      desc: "Professional installation services with proper setup and testing",
+    },
     {
       title: "Maintenance",
       desc: "Regular maintenance and filter replacement services to ensure optimal performance",
@@ -13,21 +16,21 @@ export function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="services" className="bg-white py-20">
+      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <ScrollAnimationWrapper id="services-header">
-          <h2 className="text-4xl font-bold mb-16 text-[#03045e]">Our Services</h2>
+          <h2 className="mb-16 text-4xl font-bold text-[#03045e]">Our Services</h2>
         </ScrollAnimationWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {services.map((service, index) => (
             <ScrollAnimationWrapper key={index} id={`service-${index}`} delay={index * 200}>
-              <Card className="p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-white to-gray-50 border-0 shadow-lg h-full flex flex-col">
-                <CardContent className="pt-6 flex-1 flex flex-col justify-between">
+              <Card className="flex h-full transform flex-col border-0 bg-gradient-to-br from-white to-gray-50 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <CardContent className="flex flex-1 flex-col justify-between pt-6">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-4 text-[#03045e]">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-6 flex-1">{service.desc}</p>
+                    <h3 className="mb-4 text-2xl font-semibold text-[#03045e]">{service.title}</h3>
+                    <p className="mb-6 flex-1 leading-relaxed text-gray-600">{service.desc}</p>
                   </div>
-                  <Button className="bg-[#03045e] hover:bg-[#02044b] text-white transition-all duration-300 rounded-full mt-auto">
+                  <Button className="mt-auto rounded-full bg-[#03045e] text-white transition-all duration-300 hover:bg-[#02044b]">
                     Learn More
                   </Button>
                 </CardContent>

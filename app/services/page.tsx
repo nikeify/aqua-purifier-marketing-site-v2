@@ -10,22 +10,28 @@ export default function ServicesPage() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 to-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#03045e] mb-6">Our Services</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive water purification solutions with expert installation, maintenance, and support services
+          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+            <h1 className="mb-6 text-4xl font-bold text-[#03045e] md:text-5xl">Our Services</h1>
+            <p className="mx-auto max-w-3xl text-xl text-gray-600">
+              Comprehensive water purification solutions with expert installation, maintenance, and
+              support services
             </p>
           </div>
         </section>
 
         {/* Services Grid */}
         <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {/* Installation Service */}
-              <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-[#03045e] rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#03045e]">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -34,11 +40,14 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-[#03045e] mb-4">Professional Installation</h3>
-                <p className="text-gray-600 mb-4">
-                  Expert installation of RO water purifiers with proper plumbing connections and system setup.
+                <h3 className="mb-4 text-xl font-semibold text-[#03045e]">
+                  Professional Installation
+                </h3>
+                <p className="mb-4 text-gray-600">
+                  Expert installation of RO water purifiers with proper plumbing connections and
+                  system setup.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-2">
+                <ul className="space-y-2 text-sm text-gray-500">
                   <li>• Free site inspection</li>
                   <li>• Professional plumbing work</li>
                   <li>• System testing & commissioning</li>
@@ -47,9 +56,14 @@ export default function ServicesPage() {
               </div>
 
               {/* Maintenance Service */}
-              <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-[#03045e] rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#03045e]">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -64,11 +78,11 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-[#03045e] mb-4">Regular Maintenance</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="mb-4 text-xl font-semibold text-[#03045e]">Regular Maintenance</h3>
+                <p className="mb-4 text-gray-600">
                   Scheduled maintenance services to ensure optimal performance and water quality.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-2">
+                <ul className="space-y-2 text-sm text-gray-500">
                   <li>• Filter replacement reminders</li>
                   <li>• System cleaning & sanitization</li>
                   <li>• Performance optimization</li>
@@ -77,9 +91,14 @@ export default function ServicesPage() {
               </div>
 
               {/* Repair Service */}
-              <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-[#03045e] rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#03045e]">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -88,11 +107,11 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-[#03045e] mb-4">Repair & Support</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="mb-4 text-xl font-semibold text-[#03045e]">Repair & Support</h3>
+                <p className="mb-4 text-gray-600">
                   Quick repair services and technical support for all water purifier issues.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-2">
+                <ul className="space-y-2 text-sm text-gray-500">
                   <li>• 24/7 customer support</li>
                   <li>• Same-day repair service</li>
                   <li>• Genuine spare parts</li>
@@ -101,9 +120,14 @@ export default function ServicesPage() {
               </div>
 
               {/* Water Testing */}
-              <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-[#03045e] rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#03045e]">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -112,11 +136,12 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-[#03045e] mb-4">Water Quality Testing</h3>
-                <p className="text-gray-600 mb-4">
-                  Comprehensive water analysis to determine the best purification solution for your needs.
+                <h3 className="mb-4 text-xl font-semibold text-[#03045e]">Water Quality Testing</h3>
+                <p className="mb-4 text-gray-600">
+                  Comprehensive water analysis to determine the best purification solution for your
+                  needs.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-2">
+                <ul className="space-y-2 text-sm text-gray-500">
                   <li>• Free water quality testing</li>
                   <li>• TDS & pH level analysis</li>
                   <li>• Contamination detection</li>
@@ -125,9 +150,14 @@ export default function ServicesPage() {
               </div>
 
               {/* Commercial Solutions */}
-              <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-[#03045e] rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#03045e]">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -136,11 +166,12 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-[#03045e] mb-4">Commercial Solutions</h3>
-                <p className="text-gray-600 mb-4">
-                  Large-scale water purification systems for offices, schools, hospitals, and industries.
+                <h3 className="mb-4 text-xl font-semibold text-[#03045e]">Commercial Solutions</h3>
+                <p className="mb-4 text-gray-600">
+                  Large-scale water purification systems for offices, schools, hospitals, and
+                  industries.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-2">
+                <ul className="space-y-2 text-sm text-gray-500">
                   <li>• High-capacity RO plants</li>
                   <li>• Custom system design</li>
                   <li>• Bulk water solutions</li>
@@ -149,9 +180,14 @@ export default function ServicesPage() {
               </div>
 
               {/* Consultation */}
-              <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-[#03045e] rounded-full flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="rounded-xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#03045e]">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -160,11 +196,11 @@ export default function ServicesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-[#03045e] mb-4">Expert Consultation</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="mb-4 text-xl font-semibold text-[#03045e]">Expert Consultation</h3>
+                <p className="mb-4 text-gray-600">
                   Professional guidance to help you choose the right water purification system.
                 </p>
-                <ul className="text-sm text-gray-500 space-y-2">
+                <ul className="space-y-2 text-sm text-gray-500">
                   <li>• Free consultation calls</li>
                   <li>• Site visit & assessment</li>
                   <li>• Product recommendations</li>
@@ -177,16 +213,18 @@ export default function ServicesPage() {
 
         {/* CTA Section */}
         <section className="bg-[#03045e] py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Need Professional Water Purification Services?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="mb-4 text-3xl font-bold text-white">
+              Need Professional Water Purification Services?
+            </h2>
+            <p className="mb-8 text-xl text-blue-100">
               Contact our experts for personalized solutions and competitive pricing
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#03045e] px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <button className="rounded-full bg-white px-8 py-3 font-semibold text-[#03045e] transition-colors duration-300 hover:bg-gray-100">
                 Schedule Service Call
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#03045e] transition-colors duration-300">
+              <button className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white transition-colors duration-300 hover:bg-white hover:text-[#03045e]">
                 Get Free Quote
               </button>
             </div>

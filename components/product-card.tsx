@@ -43,36 +43,38 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
   return (
     <Card
-      className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-white border-0 shadow-md overflow-hidden h-full"
+      className="group h-full transform overflow-hidden border-0 bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
       style={{
         animationDelay: `${index * 100}ms`,
       }}
     >
-      <CardContent className="p-0 h-full flex flex-col">
-        <Link href={`/products/${productSlug}`} className="relative overflow-hidden block">
+      <CardContent className="flex h-full flex-col p-0">
+        <Link href={`/products/${productSlug}`} className="relative block overflow-hidden">
           <Image
             src={product.image || "/placeholder.svg"}
             alt={`${product.name} - Aquaved RO water purifier`}
             width={400}
             height={300}
-            className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+            className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
           />
-          <Badge className="absolute top-4 left-4 bg-[#03045e] text-white">{product.category}</Badge>
+          <Badge className="absolute top-4 left-4 bg-[#03045e] text-white">
+            {product.category}
+          </Badge>
         </Link>
 
-        <div className="p-6 flex-1 flex flex-col">
+        <div className="flex flex-1 flex-col p-6">
           <Link href={`/products/${productSlug}`}>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#03045e] transition-colors cursor-pointer">
+            <h3 className="mb-3 cursor-pointer text-xl font-semibold text-gray-900 transition-colors group-hover:text-[#03045e]">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-gray-600 mb-4 text-sm leading-relaxed flex-1">{product.description}</p>
+          <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-600">{product.description}</p>
 
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="mb-6 flex flex-wrap gap-2">
             {product.features.slice(0, 2).map((feature, idx) => (
-              <Badge key={idx} variant="secondary" className="text-xs bg-gray-100 text-gray-700">
+              <Badge key={idx} variant="secondary" className="bg-gray-100 text-xs text-gray-700">
                 {feature}
               </Badge>
             ))}
@@ -80,7 +82,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
           <Button
             onClick={() => handleAddToEnquiry(product)}
-            className="w-full bg-[#03045e] hover:bg-[#02044b] text-white py-2 rounded-lg transition-colors duration-300 mt-auto"
+            className="mt-auto w-full rounded-lg bg-[#03045e] py-2 text-white transition-colors duration-300 hover:bg-[#02044b]"
           >
             Add to Enquiry
           </Button>

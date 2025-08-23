@@ -64,10 +64,25 @@ export function AnimatedLogo({ className = "", size = 40 }: AnimatedLogoProps) {
           />
 
           {/* Realistic reflection on the surface */}
-          <ellipse cx="17" cy="18" rx="4" ry="8" fill="url(#reflection)" transform="rotate(-15 17 18)" opacity="0.7" />
+          <ellipse
+            cx="17"
+            cy="18"
+            rx="4"
+            ry="8"
+            fill="url(#reflection)"
+            transform="rotate(-15 17 18)"
+            opacity="0.7"
+          />
 
           {/* Smaller curved reflection */}
-          <ellipse cx="15" cy="15" rx="2" ry="4" fill="rgba(255,255,255,0.5)" transform="rotate(-20 15 15)" />
+          <ellipse
+            cx="15"
+            cy="15"
+            rx="2"
+            ry="4"
+            fill="rgba(255,255,255,0.5)"
+            transform="rotate(-20 15 15)"
+          />
 
           {/* Realistic water bubbles with depth */}
           <circle cx="16" cy="22" r="1.5" fill="rgba(255,255,255,0.8)" filter="url(#dropShadow)" />
@@ -81,7 +96,7 @@ export function AnimatedLogo({ className = "", size = 40 }: AnimatedLogoProps) {
         </svg>
       </div>
       <span
-        className="ml-2 font-bold text-2xl"
+        className="ml-2 text-2xl font-bold"
         style={{
           color: "#03045e",
           textShadow: "0 1px 2px rgba(0,0,0,0.1)",

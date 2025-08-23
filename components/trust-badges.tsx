@@ -46,34 +46,34 @@ export function TrustBadges() {
   }, [])
 
   return (
-    <section id="trust-badges" className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="trust-badges" className="bg-white py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
-          className={`text-center mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`mb-12 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "#03045e" }}>
+          <h2 className="mb-4 text-3xl font-bold" style={{ color: "#03045e" }}>
             Trusted & Certified
           </h2>
           <p className="text-lg text-gray-600">Your assurance of quality and reliability</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {badges.map((badge, index) => {
             const Icon = badge.icon
             return (
               <div
                 key={index}
                 className={`text-center transition-all duration-1000 delay-${index * 200} ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
               >
-                <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
-                  <Icon className="w-8 h-8" style={{ color: "#03045e" }} />
+                <div className="mx-auto mb-4 flex h-20 w-20 transform items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-white p-6 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                  <Icon className="h-8 w-8" style={{ color: "#03045e" }} />
                 </div>
-                <h3 className="font-semibold text-lg mb-2" style={{ color: "#03045e" }}>
+                <h3 className="mb-2 text-lg font-semibold" style={{ color: "#03045e" }}>
                   {badge.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{badge.description}</p>
+                <p className="text-sm text-gray-600">{badge.description}</p>
               </div>
             )
           })}

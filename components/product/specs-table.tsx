@@ -4,8 +4,8 @@ interface SpecsTableProps {
 
 export function SpecsTable({ specs }: SpecsTableProps) {
   return (
-    <div className="bg-gray-50 rounded-lg p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Specifications</h3>
+    <div className="rounded-lg bg-gray-50 p-6">
+      <h3 className="mb-4 text-lg font-semibold text-gray-900">Specifications</h3>
       <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {Object.entries(specs).map(([key, value]) => (
           <div key={key} className="border-b border-gray-200 pb-2">

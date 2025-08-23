@@ -24,7 +24,8 @@ const products = [
     name: "Premium Kitchen RO System",
     category: "Domestic RO",
     image: "/aquaved-ro-kitchen.jpeg",
-    description: "Advanced RO system with digital display and copper alkaline technology for kitchen countertops.",
+    description:
+      "Advanced RO system with digital display and copper alkaline technology for kitchen countertops.",
     features: ["Digital Display", "Copper Alkaline", "Multi-Stage Filtration"],
   },
   {
@@ -32,7 +33,8 @@ const products = [
     name: "Fusion RO Water Purifier",
     category: "Domestic RO",
     image: "/aquaved-fusion-ro.jpeg",
-    description: "Sleek white RO system with copper accents and advanced reverse osmosis technology.",
+    description:
+      "Sleek white RO system with copper accents and advanced reverse osmosis technology.",
     features: ["RO + UV + UF + TDS", "Copper Technology", "Wall Mounted"],
   },
   {
@@ -40,7 +42,8 @@ const products = [
     name: "Mineral Water Purifier",
     category: "Domestic RO",
     image: "/aquaved-mineral-water.jpeg",
-    description: "Compact mineral water purifier with Dr.AquaBerry technology and blue accent design.",
+    description:
+      "Compact mineral water purifier with Dr.AquaBerry technology and blue accent design.",
     features: ["Mineral Enhancement", "Compact Design", "Dr.AquaBerry Tech"],
   },
   {
@@ -48,7 +51,8 @@ const products = [
     name: "Transparent RO System",
     category: "Domestic RO",
     image: "/aquaved-transparent-ro.jpeg",
-    description: "See-through RO system showcasing internal filtration components with copper accents.",
+    description:
+      "See-through RO system showcasing internal filtration components with copper accents.",
     features: ["Transparent Design", "Visible Filtration", "Copper Alkaline"],
   },
   {
@@ -56,7 +60,8 @@ const products = [
     name: "Smart Countertop Dispenser",
     category: "Domestic RO",
     image: "/aquaved-countertop-dispenser.jpeg",
-    description: 'Modern black countertop water dispenser with touch controls and "Freshness In Every Drop".',
+    description:
+      'Modern black countertop water dispenser with touch controls and "Freshness In Every Drop".',
     features: ["Touch Controls", "Countertop Design", "Smart Display"],
   },
   {
@@ -64,7 +69,8 @@ const products = [
     name: "Next Gen LED System",
     category: "Domestic RO",
     image: "/aquaved-nextgen-led.jpeg",
-    description: "Advanced RO system with green LED display and next-generation water purification technology.",
+    description:
+      "Advanced RO system with green LED display and next-generation water purification technology.",
     features: ["LED Display", "Next Gen Tech", "Multi-Stage Process"],
   },
   {
@@ -72,7 +78,8 @@ const products = [
     name: "Smart LED Display RO",
     category: "Domestic RO",
     image: "/aquaved-smart-led.jpeg",
-    description: "Digital smart RO system with copper LED display and advanced purification indicators.",
+    description:
+      "Digital smart RO system with copper LED display and advanced purification indicators.",
     features: ["Digital Smart Display", "Copper LED", "Advanced Indicators"],
   },
   {
@@ -80,7 +87,8 @@ const products = [
     name: "Copper Transparent RO",
     category: "Domestic RO",
     image: "/aquaved-copper-transparent.jpeg",
-    description: "Premium transparent RO system with copper alkaline technology and visible filtration process.",
+    description:
+      "Premium transparent RO system with copper alkaline technology and visible filtration process.",
     features: ["Copper Alkaline", "Transparent Body", "Premium Quality"],
   },
   {
@@ -88,7 +96,8 @@ const products = [
     name: "Silver Touch Dispenser",
     category: "Domestic RO",
     image: "/aquaved-silver-dispenser.jpeg",
-    description: "Elegant silver countertop dispenser with touch panel controls and modern aesthetics.",
+    description:
+      "Elegant silver countertop dispenser with touch panel controls and modern aesthetics.",
     features: ["Touch Panel", "Silver Finish", "Countertop Model"],
   },
   {
@@ -96,7 +105,8 @@ const products = [
     name: "Premium Water System",
     category: "Spare Parts",
     image: "/aquaved-transparent-system.jpeg",
-    description: "Complete water purifier system with visible filtration stages and premium quality components.",
+    description:
+      "Complete water purifier system with visible filtration stages and premium quality components.",
     features: ["Complete System", "Visible Stages", "ISO Certified"],
   },
   {
@@ -112,7 +122,8 @@ const products = [
     name: "Next Gen Transparent RO",
     category: "Domestic RO",
     image: "/aquaved-nextgen-transparent.jpeg",
-    description: "Advanced transparent RO system with Next Gen LED display and copper alkaline technology.",
+    description:
+      "Advanced transparent RO system with Next Gen LED display and copper alkaline technology.",
     features: ["Next Gen Display", "Transparent Design", "Copper Alkaline"],
   },
   {
@@ -120,7 +131,8 @@ const products = [
     name: "Commercial RO Plant",
     category: "Commercial RO",
     image: "/aquaved-commercial-plant.jpeg",
-    description: "Heavy-duty commercial RO plant with three-stage filtration for industrial applications.",
+    description:
+      "Heavy-duty commercial RO plant with three-stage filtration for industrial applications.",
     features: ["Commercial Grade", "Three Stage", "Industrial Use"],
   },
   {
@@ -128,7 +140,8 @@ const products = [
     name: "Mineral Water System",
     category: "Spare Parts",
     image: "/aquaved-mineral-transparent.jpeg",
-    description: "Transparent mineral water purification system with advanced filtration technology.",
+    description:
+      "Transparent mineral water purification system with advanced filtration technology.",
     features: ["Mineral Enhancement", "Transparent Body", "Advanced Tech"],
   },
   {
@@ -136,7 +149,8 @@ const products = [
     name: "Endless Purity RO",
     category: "Domestic RO",
     image: "/aquaved-endless-purity.jpeg",
-    description: 'Multi-stage water purifier with "Endless Purity" technology and sleek white design.',
+    description:
+      'Multi-stage water purifier with "Endless Purity" technology and sleek white design.',
     features: ["Multi-Stage", "Endless Purity", "Sleek Design"],
   },
   {
@@ -157,12 +171,12 @@ export default function ProductsPage() {
         <Header currentPage="products" />
 
         {/* Page Header */}
-        <section className="bg-white py-16 mt-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Products</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our complete range of premium RO water purifiers and spare parts — built for homes, offices, and
-              industries.
+        <section className="mt-16 bg-white py-16">
+          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+            <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">Our Products</h1>
+            <p className="mx-auto max-w-3xl text-xl text-gray-600">
+              Discover our complete range of premium RO water purifiers and spare parts — built for
+              homes, offices, and industries.
             </p>
           </div>
         </section>

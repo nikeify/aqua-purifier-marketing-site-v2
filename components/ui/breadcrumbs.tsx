@@ -8,7 +8,7 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ product }: BreadcrumbsProps) {
   return (
-    <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+    <nav className="mb-8 flex items-center space-x-2 text-sm text-gray-500">
       <Link href="/" className="hover:text-[#03045e]">
         Home
       </Link>

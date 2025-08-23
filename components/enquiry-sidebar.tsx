@@ -8,7 +8,8 @@ import { X, ShoppingCart, Send } from "lucide-react"
 import { useEnquiry } from "@/components/enquiry-context"
 
 export function EnquirySidebar() {
-  const { enquiryItems, removeFromEnquiry, clearEnquiry, isEnquiryOpen, setIsEnquiryOpen } = useEnquiry()
+  const { enquiryItems, removeFromEnquiry, clearEnquiry, isEnquiryOpen, setIsEnquiryOpen } =
+    useEnquiry()
 
   if (!isEnquiryOpen && enquiryItems.length === 0) return null
 
@@ -16,20 +17,23 @@ export function EnquirySidebar() {
     <>
       {/* Backdrop */}
       {isEnquiryOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={() => setIsEnquiryOpen(false)} />
+        <div
+          className="bg-opacity-50 fixed inset-0 z-40 bg-black lg:hidden"
+          onClick={() => setIsEnquiryOpen(false)}
+        />
       )}
 
       {/* Sidebar */}
       <div
-        className={`fixed right-0 top-0 h-full w-96 bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 z-50 h-full w-96 transform bg-white shadow-2xl transition-transform duration-300 ${
           isEnquiryOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex h-full flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b bg-[#03045e] text-white">
+          <div className="flex items-center justify-between border-b bg-[#03045e] p-6 text-white">
             <div className="flex items-center space-x-2">
-              <ShoppingCart className="w-5 h-5" />
+              <ShoppingCart className="h-5 w-5" />
               <h3 className="text-lg font-semibold">Enquiry List</h3>
               <Badge className="bg-white text-[#03045e]">{enquiryItems.length}</Badge>
             </div>
@@ -37,23 +41,23 @@ export function EnquirySidebar() {
               variant="ghost"
               size="sm"
               onClick={() => setIsEnquiryOpen(false)}
-              className="text-white hover:bg-white hover:bg-opacity-20"
+              className="hover:bg-opacity-20 text-white hover:bg-white"
             >
-              <X className="w-5 h-5" />
+              <X className="h-5 w-5" />
             </Button>
           </div>
 
           {/* Content */}
           <div className="flex-1 overflow-y-auto p-4">
             {enquiryItems.length === 0 ? (
-              <div className="text-center py-16">
-                <ShoppingCart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <div className="py-16 text-center">
+                <ShoppingCart className="mx-auto mb-4 h-16 w-16 text-gray-300" />
                 <p className="text-gray-500">No products in enquiry</p>
-                <p className="text-sm text-gray-400 mt-2">Add products to create an enquiry</p>
+                <p className="mt-2 text-sm text-gray-400">Add products to create an enquiry</p>
               </div>
             ) : (
               <div className="space-y-4">
-                {enquiryItems.map((product) => (
+                {enquiryItems.map(product => (
                   <Card key={product.id} className="border shadow-sm">
                     <CardContent className="p-4">
                       <div className="flex space-x-3">
@@ -64,14 +68,16 @@ export function EnquirySidebar() {
                           height={60}
                           className="rounded-lg object-cover"
                         />
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-sm text-gray-900 truncate">{product.name}</h4>
-                          <p className="text-xs text-gray-500 mt-1">{product.category}</p>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="truncate text-sm font-medium text-gray-900">
+                            {product.name}
+                          </h4>
+                          <p className="mt-1 text-xs text-gray-500">{product.category}</p>
                           <Button
                             variant="ghost"
                             size="sm"
                             onClick={() => removeFromEnquiry(product.id)}
-                            className="text-red-500 hover:text-red-700 hover:bg-red-50 p-0 h-auto mt-2"
+                            className="mt-2 h-auto p-0 text-red-500 hover:bg-red-50 hover:text-red-700"
                           >
                             Remove
                           </Button>
@@ -86,13 +92,13 @@ export function EnquirySidebar() {
 
           {/* Footer */}
           {enquiryItems.length > 0 && (
-            <div className="border-t p-4 space-y-3">
+            <div className="space-y-3 border-t p-4">
               <Button onClick={clearEnquiry} variant="outline" className="w-full bg-transparent">
                 Clear All
               </Button>
               <Link href="/#contact" onClick={() => setIsEnquiryOpen(false)}>
-                <Button className="w-full bg-[#03045e] hover:bg-[#02044b] text-white">
-                  <Send className="w-4 h-4 mr-2" />
+                <Button className="w-full bg-[#03045e] text-white hover:bg-[#02044b]">
+                  <Send className="mr-2 h-4 w-4" />
                   Send Enquiry ({enquiryItems.length})
                 </Button>
               </Link>
@@ -105,10 +111,10 @@ export function EnquirySidebar() {
       {!isEnquiryOpen && enquiryItems.length > 0 && (
         <Button
           onClick={() => setIsEnquiryOpen(true)}
-          className="fixed bottom-6 right-6 bg-[#03045e] hover:bg-[#02044b] text-white rounded-full w-14 h-14 shadow-lg z-40"
+          className="fixed right-6 bottom-6 z-40 h-14 w-14 rounded-full bg-[#03045e] text-white shadow-lg hover:bg-[#02044b]"
         >
-          <ShoppingCart className="w-6 h-6" />
-          <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">
+          <ShoppingCart className="h-6 w-6" />
+          <Badge className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs text-white">
             {enquiryItems.length}
           </Badge>
         </Button>

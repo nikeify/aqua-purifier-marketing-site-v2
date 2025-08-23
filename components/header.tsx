@@ -9,18 +9,18 @@ interface HeaderProps {
 
 export function Header({ currentPage = "home" }: HeaderProps) {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 z-50 w-full bg-white shadow-lg">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <div>
             <Link href="/">
               <AnimatedLogo />
             </Link>
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden space-x-8 md:flex">
             <Link
               href="/"
-              className={`transition-colors duration-300 font-medium ${
+              className={`font-medium transition-colors duration-300 ${
                 currentPage === "home" ? "text-[#03045e]" : "text-gray-700 hover:text-[#03045e]"
               }`}
             >
@@ -28,7 +28,7 @@ export function Header({ currentPage = "home" }: HeaderProps) {
             </Link>
             <Link
               href="/products"
-              className={`transition-colors duration-300 font-medium ${
+              className={`font-medium transition-colors duration-300 ${
                 currentPage === "products" ? "text-[#03045e]" : "text-gray-700 hover:text-[#03045e]"
               }`}
             >
@@ -36,7 +36,7 @@ export function Header({ currentPage = "home" }: HeaderProps) {
             </Link>
             <Link
               href="/services"
-              className={`transition-colors duration-300 font-medium ${
+              className={`font-medium transition-colors duration-300 ${
                 currentPage === "services" ? "text-[#03045e]" : "text-gray-700 hover:text-[#03045e]"
               }`}
             >
@@ -44,7 +44,7 @@ export function Header({ currentPage = "home" }: HeaderProps) {
             </Link>
             <Link
               href="/about"
-              className={`transition-colors duration-300 font-medium ${
+              className={`font-medium transition-colors duration-300 ${
                 currentPage === "about" ? "text-[#03045e]" : "text-gray-700 hover:text-[#03045e]"
               }`}
             >
@@ -52,7 +52,7 @@ export function Header({ currentPage = "home" }: HeaderProps) {
             </Link>
             <Link
               href="/contact"
-              className={`transition-colors duration-300 font-medium ${
+              className={`font-medium transition-colors duration-300 ${
                 currentPage === "contact" ? "text-[#03045e]" : "text-gray-700 hover:text-[#03045e]"
               }`}
             >
@@ -60,8 +60,8 @@ export function Header({ currentPage = "home" }: HeaderProps) {
             </Link>
           </div>
           <Link href="/contact">
-            <Button className="bg-[#03045e] hover:bg-[#02044b] text-white px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-              <Phone className="w-4 h-4 mr-2" />
+            <Button className="transform rounded-full bg-[#03045e] px-6 py-2 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#02044b]">
+              <Phone className="mr-2 h-4 w-4" />
               Get Quote
             </Button>
           </Link>

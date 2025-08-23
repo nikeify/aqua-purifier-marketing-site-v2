@@ -23,22 +23,24 @@ export function ProductGrid({ products }: ProductGridProps) {
   const [activeCategory, setActiveCategory] = useState("All")
 
   const filteredProducts =
-    activeCategory === "All" ? products : products.filter((product) => product.category === activeCategory)
+    activeCategory === "All"
+      ? products
+      : products.filter(product => product.category === activeCategory)
 
   return (
     <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
+        <div className="mb-12 flex flex-wrap justify-center gap-4">
+          {categories.map(category => (
             <Button
               key={category}
               variant={activeCategory === category ? "default" : "outline"}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`rounded-full px-6 py-2 transition-all duration-300 ${
                 activeCategory === category
                   ? "bg-[#03045e] text-white shadow-lg"
-                  : "bg-white text-gray-600 border-gray-300 hover:bg-[#03045e] hover:text-white"
+                  : "border-gray-300 bg-white text-gray-600 hover:bg-[#03045e] hover:text-white"
               }`}
             >
               {category}
@@ -46,15 +48,15 @@ export function ProductGrid({ products }: ProductGridProps) {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}
         </div>
 
         {filteredProducts.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-gray-500 text-lg">No products found in this category.</p>
+          <div className="py-16 text-center">
+            <p className="text-lg text-gray-500">No products found in this category.</p>
           </div>
         )}
       </div>

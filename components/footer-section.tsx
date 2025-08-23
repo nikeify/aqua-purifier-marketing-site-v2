@@ -8,24 +8,24 @@ export function FooterSection() {
   return (
     <footer
       id="contact"
-      className="py-16 text-white relative overflow-hidden bg-gradient-to-br from-[#03045e] to-[#02044b]"
+      className="relative overflow-hidden bg-gradient-to-br from-[#03045e] to-[#02044b] py-16 text-white"
     >
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <div className="mb-4">
-              <h3 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">Aquaved</h3>
-              <p className="text-sm text-blue-200 font-medium">by Vedant Enterprises</p>
+              <h3 className="mb-2 text-3xl font-bold text-white drop-shadow-lg">Aquaved</h3>
+              <p className="text-sm font-medium text-blue-200">by Vedant Enterprises</p>
             </div>
-            <p className="text-blue-100 mb-4 leading-relaxed">
+            <p className="mb-4 leading-relaxed text-blue-100">
               Your trusted partner for pure water solutions since 2012.
             </p>
             <div className="space-y-3">
               <Button
                 size="sm"
-                className="bg-white text-[#03045e] hover:bg-gray-100 hover:text-[#03045e] w-full justify-start rounded-full transition-all duration-300 transform hover:scale-105 text-xs sm:text-sm px-3 py-2"
+                className="w-full transform justify-start rounded-full bg-white px-3 py-2 text-xs text-[#03045e] transition-all duration-300 hover:scale-105 hover:bg-gray-100 hover:text-[#03045e] sm:text-sm"
               >
-                <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
+                <Phone className="mr-2 h-4 w-4 flex-shrink-0" />
                 <span className="truncate">
                   <span className="hidden sm:inline">Call Now: </span>
                   <span className="sm:hidden">Call: </span>
@@ -34,44 +34,44 @@ export function FooterSection() {
               </Button>
               <Button
                 size="sm"
-                className="bg-[#03045e] hover:bg-[#02044b] text-white w-full justify-start rounded-full transition-all duration-300 border border-white text-xs sm:text-sm px-3 py-2"
+                className="w-full justify-start rounded-full border border-white bg-[#03045e] px-3 py-2 text-xs text-white transition-all duration-300 hover:bg-[#02044b] sm:text-sm"
               >
-                <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
+                <Mail className="mr-2 h-4 w-4 flex-shrink-0" />
                 <span className="truncate">Email Us</span>
               </Button>
             </div>
             <div className="mt-6">
-              <h5 className="text-sm font-semibold mb-3 text-blue-200">Follow Us</h5>
+              <h5 className="mb-3 text-sm font-semibold text-blue-200">Follow Us</h5>
               <div className="flex space-x-3">
                 <a
                   href="https://youtube.com/@aquaved"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-red-600 hover:bg-red-700 p-2 rounded-full transition-all duration-300 transform hover:scale-110"
+                  className="transform rounded-full bg-red-600 p-2 transition-all duration-300 hover:scale-110 hover:bg-red-700"
                   aria-label="Visit our YouTube channel"
                 >
-                  <Youtube className="w-4 h-4 text-white" />
+                  <Youtube className="h-4 w-4 text-white" />
                 </a>
                 <a
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-600 hover:bg-green-700 p-2 rounded-full transition-all duration-300 transform hover:scale-110"
+                  className="transform rounded-full bg-green-600 p-2 transition-all duration-300 hover:scale-110 hover:bg-green-700"
                   aria-label="Contact us on WhatsApp"
                 >
-                  <MessageCircle className="w-4 h-4 text-white" />
+                  <MessageCircle className="h-4 w-4 text-white" />
                 </a>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="mb-4 text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                  className="transform text-blue-100 transition-colors duration-300 hover:translate-x-1 hover:text-white"
                 >
                   Home
                 </Link>
@@ -79,7 +79,7 @@ export function FooterSection() {
               <li>
                 <Link
                   href="/products"
-                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                  className="transform text-blue-100 transition-colors duration-300 hover:translate-x-1 hover:text-white"
                 >
                   Products
                 </Link>
@@ -87,7 +87,7 @@ export function FooterSection() {
               <li>
                 <Link
                   href="/services"
-                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                  className="transform text-blue-100 transition-colors duration-300 hover:translate-x-1 hover:text-white"
                 >
                   Services
                 </Link>
@@ -95,7 +95,7 @@ export function FooterSection() {
               <li>
                 <Link
                   href="/about"
-                  className="text-blue-100 hover:text-white transition-colors duration-300 hover:translate-x-1 transform"
+                  className="transform text-blue-100 transition-colors duration-300 hover:translate-x-1 hover:text-white"
                 >
                   About Us
                 </Link>
@@ -104,41 +104,45 @@ export function FooterSection() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Products</h4>
+            <h4 className="mb-4 text-lg font-semibold">Products</h4>
             <ul className="space-y-2 text-blue-100">
-              <li className="hover:text-white transition-colors cursor-pointer">Home RO Systems</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Commercial Purifiers</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Spare Parts</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Accessories</li>
+              <li className="cursor-pointer transition-colors hover:text-white">Home RO Systems</li>
+              <li className="cursor-pointer transition-colors hover:text-white">
+                Commercial Purifiers
+              </li>
+              <li className="cursor-pointer transition-colors hover:text-white">Spare Parts</li>
+              <li className="cursor-pointer transition-colors hover:text-white">Accessories</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="mb-4 text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3 text-blue-100">
-              <p className="flex items-center hover:text-white transition-colors">
-                <Mail className="w-4 h-4 mr-2" />
+              <p className="flex items-center transition-colors hover:text-white">
+                <Mail className="mr-2 h-4 w-4" />
                 info@aquaved.com
               </p>
-              <p className="flex items-center hover:text-white transition-colors">
-                <Phone className="w-4 h-4 mr-2" />
+              <p className="flex items-center transition-colors hover:text-white">
+                <Phone className="mr-2 h-4 w-4" />
                 +91 98765 43210
               </p>
-              <p className="flex items-center hover:text-white transition-colors">📍 Mumbai, Maharashtra</p>
+              <p className="flex items-center transition-colors hover:text-white">
+                📍 Mumbai, Maharashtra
+              </p>
               <a
                 href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center hover:text-white transition-colors cursor-pointer group"
+                className="group flex cursor-pointer items-center transition-colors hover:text-white"
               >
-                <MessageCircle className="w-4 h-4 mr-2 group-hover:text-green-400" />
+                <MessageCircle className="mr-2 h-4 w-4 group-hover:text-green-400" />
                 WhatsApp: +91 98765 43210
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-blue-200/30 mt-12 pt-8 text-center text-blue-100">
+        <div className="mt-12 border-t border-blue-200/30 pt-8 text-center text-blue-100">
           <p>&copy; 2024 Vedant Enterprises (Aquaved). All rights reserved.</p>
         </div>
       </div>

@@ -27,8 +27,8 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false)
 
   const addToEnquiry = (product: Product) => {
-    setEnquiryItems((prev) => {
-      if (prev.find((item) => item.id === product.id)) {
+    setEnquiryItems(prev => {
+      if (prev.find(item => item.id === product.id)) {
         return prev // Already in enquiry
       }
       return [...prev, product]
@@ -37,7 +37,7 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
   }
 
   const removeFromEnquiry = (productId: number) => {
-    setEnquiryItems((prev) => prev.filter((item) => item.id !== productId))
+    setEnquiryItems(prev => prev.filter(item => item.id !== productId))
   }
 
   const clearEnquiry = () => {

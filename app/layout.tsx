@@ -97,7 +97,8 @@ export default function RootLayout({
               name: "Vedant Enterprises (Aquaved)",
               url: "https://aquaved.com",
               logo: "https://aquaved.com/favicon.png",
-              description: "Premium RO water purifier manufacturer, trader, and service provider since 2012",
+              description:
+                "Premium RO water purifier manufacturer, trader, and service provider since 2012",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Mumbai",
