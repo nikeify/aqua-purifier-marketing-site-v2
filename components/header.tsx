@@ -60,7 +60,7 @@ export function Header({ currentPage = "home" }: HeaderProps) {
             </Link>
           </div>
           <Link href="/contact">
-            <Button className="transform rounded-full bg-[#03045e] px-6 py-2 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#02044b]">
+            <Button className="transform cursor-pointer rounded-full bg-[#03045e] px-6 py-2 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#02044b]">
               <Phone className="mr-2 h-4 w-4" />
               Get Quote
             </Button>

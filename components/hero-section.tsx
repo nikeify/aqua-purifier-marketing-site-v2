@@ -29,7 +29,7 @@ export function HeroSection() {
             <Link href="/products">
               <Button
                 size="lg"
-                className="transform rounded-full bg-white px-8 py-4 text-lg text-[#03045e] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gray-100 hover:text-[#03045e]"
+                className="transform cursor-pointer rounded-full bg-white px-8 py-4 text-lg text-[#03045e] shadow-xl transition-all duration-300 hover:scale-105 hover:bg-gray-100 hover:text-[#03045e]"
               >
                 Explore Our Products
               </Button>
@@ -37,7 +37,7 @@ export function HeroSection() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="transform rounded-full border-2 border-white bg-[#03045e] px-8 py-4 text-lg text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#02044b]"
+                className="transform cursor-pointer rounded-full border-2 border-white bg-[#03045e] px-8 py-4 text-lg text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#02044b]"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Us
