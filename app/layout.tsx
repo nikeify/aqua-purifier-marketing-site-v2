@@ -66,6 +66,8 @@ export const metadata: Metadata = {
     },
   },
 }
+// add this to resolve OG/twitter image URLs correctly (uses env var or fallback)
+export const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://aquaved.com")
 
 export const viewport: Viewport = {
   width: "device-width",

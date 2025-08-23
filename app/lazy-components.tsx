@@ -17,3 +17,11 @@ export const LazyTrustBadges = dynamic(
     ssr: false,
   },
 )
+
+export const LazyAboutSection = dynamic(
+  () => import("@/components/about-section").then((mod) => mod.AboutSection),
+  {
+    loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-lg mx-4 my-8" />,
+    ssr: false,
+  }
+)

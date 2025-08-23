@@ -9,38 +9,53 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollAnimationWrapper id="about-images" animation="slide-right">
             <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="/aquaved-transparent-ro.jpeg"
-                alt="Transparent RO System showing internal components"
-                className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                width={300}
-                height={400}
-                quality={80}
-              />
-              <Image
-                src="/aquaved-smart-led.jpeg"
-                alt="Smart LED Display Water Purifier"
-                className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 mt-8"
-                width={300}
-                height={400}
-                quality={80}
-              />
-              <Image
-                src="/aquaved-copper-transparent.jpeg"
-                alt="Copper Transparent RO System"
-                className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 -mt-8"
-                width={300}
-                height={400}
-                quality={80}
-              />
-              <Image
-                src="/aquaved-nextgen-led.jpeg"
-                alt="Next Generation LED Technology Water Purifier"
-                className="rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                width={300}
-                height={400}
-                quality={80}
-              />
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div className="aspect-[3/4] relative">
+                  <Image
+                    src="/aquaved-transparent-ro.jpeg"
+                    alt="Transparent RO System showing internal components"
+                    fill
+                    className="object-cover transform transition-transform duration-300 group-hover:scale-105"
+                    quality={80}
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group mt-8">
+                <div className="aspect-[3/4] relative">
+                  <Image
+                    src="/aquaved-smart-led.jpeg"
+                    alt="Smart LED Display Water Purifier"
+                    fill
+                    className="object-cover transform transition-transform duration-300 group-hover:scale-105"
+                    quality={80}
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group -mt-8">
+                <div className="aspect-[3/4] relative">
+                  <Image
+                    src="/aquaved-copper-transparent.jpeg"
+                    alt="Copper Transparent RO System"
+                    fill
+                    className="object-cover transform transition-transform duration-300 group-hover:scale-105"
+                    quality={80}
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div className="aspect-[3/4] relative">
+                  <Image
+                    src="/aquaved-nextgen-led.jpeg"
+                    alt="Next Generation LED Technology Water Purifier"
+                    fill
+                    className="object-cover transform transition-transform duration-300 group-hover:scale-105"
+                    quality={80}
+                  />
+                </div>
+              </div>
             </div>
           </ScrollAnimationWrapper>
 
