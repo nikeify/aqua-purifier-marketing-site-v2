@@ -50,7 +50,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     >
       <CardContent className="flex h-full flex-col p-0">
         <Link href={`/products/${productSlug}`} className="relative block overflow-hidden">
-          <div className="relative w-full aspect-[4/3]">
+          <div className="relative aspect-[4/3] w-full">
             <Image
               src={product.image || "/placeholder.svg"}
               alt={`${product.name} - Aquaved RO water purifier`}

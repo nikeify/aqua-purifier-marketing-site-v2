@@ -17,7 +17,7 @@ export function AboutSection() {
                     fill
                     className="transform object-cover transition-transform duration-300 group-hover:scale-105"
                     quality={80}
-                  />
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"                  />
                 </div>
               </div>
 
@@ -29,6 +29,7 @@ export function AboutSection() {
                     fill
                     className="transform object-cover transition-transform duration-300 group-hover:scale-105"
                     quality={80}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                 </div>
               </div>
@@ -41,6 +42,7 @@ export function AboutSection() {
                     fill
                     className="transform object-cover transition-transform duration-300 group-hover:scale-105"
                     quality={80}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                 </div>
               </div>
@@ -53,6 +55,7 @@ export function AboutSection() {
                     fill
                     className="transform object-cover transition-transform duration-300 group-hover:scale-105"
                     quality={80}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                 </div>
               </div>

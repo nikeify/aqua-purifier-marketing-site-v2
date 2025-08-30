@@ -79,12 +79,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} antialiased`}>
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" href="/modern-ro-water-purifier.png" as="image" />
-        <link rel="preload" href="/aquaved-ro-kitchen.jpeg" as="image" />
-        <link rel="preload" href="/aquaved-fusion-ro.jpeg" as="image" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
