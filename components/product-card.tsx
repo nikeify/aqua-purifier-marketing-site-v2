@@ -7,15 +7,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useEnquiry } from "@/components/enquiry-context"
 import { toast } from "sonner"
-
-interface Product {
-  id: number
-  name: string
-  category: string
-  image: string
-  description: string
-  features: string[]
-}
+import type { Product } from "@/types/product"
+import type { EnquiryProduct } from "@/components/enquiry-context"
 
 interface ProductCardProps {
   product: Product
@@ -34,12 +27,24 @@ function generateSlug(name: string): string {
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addToEnquiry } = useEnquiry()
 
-  const handleAddToEnquiry = (product: Product) => {
-    addToEnquiry(product)
+  // build a minimal payload for the enquiry system so we don't rely on exact
+  // internal Enquiry types. Adjust fields to match your enquiry-context type.
+  const handleAddToEnquiry = () => {
+    const enquiryPayload: EnquiryProduct = {
+      id: product.id,
+      name: product.name,
+      category: product.category,
+      image: product.images?.[0] ?? product.image ?? "/placeholder.svg",
+      description: product.description ?? "",
+      features: product.features ?? [],
+    }
+
+    addToEnquiry(enquiryPayload)
     toast.success(`${product.name} added to enquiry!`)
   }
 
-  const productSlug = generateSlug(product.name)
+  const productSlug = product.slug ?? generateSlug(product.name)
+  const imageSrc = product.images?.[0] ?? product.image ?? "/placeholder.svg"
 
   return (
     <Card
@@ -52,7 +57,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         <Link href={`/products/${productSlug}`} className="relative block overflow-hidden">
           <div className="relative aspect-[4/3] w-full">
             <Image
-              src={product.image || "/placeholder.svg"}
+              src={imageSrc}
               alt={`${product.name} - Aquaved RO water purifier`}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -75,7 +80,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-600">{product.description}</p>
 
           <div className="mb-6 flex flex-wrap gap-2">
-            {product.features.slice(0, 2).map((feature, idx) => (
+            {(product.features ?? []).slice(0, 2).map((feature, idx) => (
               <Badge key={idx} variant="secondary" className="bg-gray-100 text-xs text-gray-700">
                 {feature}
               </Badge>
@@ -83,8 +88,8 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
 
           <Button
-            onClick={() => handleAddToEnquiry(product)}
-            className="mt-auto w-full rounded-lg bg-[#03045e] py-2 text-white transition-colors duration-300 hover:bg-[#02044b]"
+            onClick={handleAddToEnquiry}
+            className="mt-auto w-full rounded-lg bg-[#03045e] py-2 text-white transition-colors duration-300 hover:bg-[#02044B]"
           >
             Add to Enquiry
           </Button>

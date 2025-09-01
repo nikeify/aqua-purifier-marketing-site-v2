@@ -3,15 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ProductCard } from "@/components/product-card"
-
-interface Product {
-  id: number
-  name: string
-  category: string
-  image: string
-  description: string
-  features: string[]
-}
+import type { Product } from "@/types/product"
 
 interface ProductGridProps {
   products: Product[]

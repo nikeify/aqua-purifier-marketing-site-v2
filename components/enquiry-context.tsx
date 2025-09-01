@@ -2,7 +2,8 @@
 
 import { createContext, useContext, useState, type ReactNode } from "react"
 
-interface Product {
+// exported type for consumption by other components (e.g. ProductCard)
+export interface EnquiryProduct {
   id: number
   name: string
   category: string
@@ -12,8 +13,8 @@ interface Product {
 }
 
 interface EnquiryContextType {
-  enquiryItems: Product[]
-  addToEnquiry: (product: Product) => void
+  enquiryItems: EnquiryProduct[]
+  addToEnquiry: (product: EnquiryProduct) => void
   removeFromEnquiry: (productId: number) => void
   clearEnquiry: () => void
   isEnquiryOpen: boolean
@@ -23,10 +24,10 @@ interface EnquiryContextType {
 const EnquiryContext = createContext<EnquiryContextType | undefined>(undefined)
 
 export function EnquiryProvider({ children }: { children: ReactNode }) {
-  const [enquiryItems, setEnquiryItems] = useState<Product[]>([])
+  const [enquiryItems, setEnquiryItems] = useState<EnquiryProduct[]>([])
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false)
 
-  const addToEnquiry = (product: Product) => {
+  const addToEnquiry = (product: EnquiryProduct) => {
     setEnquiryItems(prev => {
       if (prev.find(item => item.id === product.id)) {
         return prev // Already in enquiry
@@ -62,9 +63,7 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
 }
 
 export function useEnquiry() {
-  const context = useContext(EnquiryContext)
-  if (context === undefined) {
-    throw new Error("useEnquiry must be used within an EnquiryProvider")
-  }
-  return context
+  const ctx = useContext(EnquiryContext)
+  if (!ctx) throw new Error("useEnquiry must be used within EnquiryProvider")
+  return ctx
 }

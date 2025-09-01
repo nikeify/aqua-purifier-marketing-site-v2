@@ -7,6 +7,7 @@
     "price": "₹18,999",
     "originalPrice": "₹22,999",
     "images": ["/aquaved-ro-kitchen.jpeg", "/aquaved-nextgen-led.jpeg", "/aquaved-smart-led.jpeg"],
+    "caption": "Advanced RO system with digital display and copper accents",
     "description": "Advanced RO system with digital display and copper alkaline technology for kitchen countertops. Perfect for modern homes with space-saving design.",
     "features": ["Digital Display", "Copper Alkaline", "Multi-Stage Filtration"],
     "specs": {
@@ -17,7 +18,8 @@
       "Power": "24V SMPS",
       "Warranty": "1 Year"
     },
-    "inStock": true
+    "inStock": true,
+    "featured": true
   },
   {
     "id": 2,
@@ -27,6 +29,7 @@
     "price": "₹16,999",
     "originalPrice": "₹19,999",
     "images": ["/aquaved-fusion-ro.jpeg", "/aquaved-transparent-ro.jpeg"],
+    "caption": "Modern white and copper design with premium filtration",
     "description": "Sleek white RO system with copper accents and advanced reverse osmosis technology.",
     "features": ["RO + UV + UF + TDS", "Copper Technology", "Wall Mounted"],
     "specs": {
@@ -37,7 +40,8 @@
       "Power": "24V SMPS",
       "Warranty": "1 Year"
     },
-    "inStock": true
+    "inStock": true,
+    "featured": true
   },
   {
     "id": 3,
@@ -47,6 +51,7 @@
     "price": "₹14,999",
     "originalPrice": "₹17,999",
     "images": ["/aquaved-mineral-water.jpeg", "/aquaved-mineral-transparent.jpeg"],
+    "caption": "Compact design with Dr.AquaBerry innovative technology",
     "description": "Compact mineral water purifier with Dr.AquaBerry technology and blue accent design.",
     "features": ["Mineral Enhancement", "Compact Design", "Dr.AquaBerry Tech"],
     "specs": {
@@ -57,7 +62,8 @@
       "Power": "24V SMPS",
       "Warranty": "1 Year"
     },
-    "inStock": true
+    "inStock": true,
+    "featured": true
   },
   {
     "id": 13,
@@ -67,6 +73,7 @@
     "price": "₹45,999",
     "originalPrice": "₹52,999",
     "images": ["/aquaved-commercial-plant.jpeg", "/aquaved-transparent-system.jpeg"],
+    "caption": "Heavy-duty commercial RO plant for industrial applications",
     "description": "Heavy-duty commercial RO plant with three-stage filtration for industrial applications.",
     "features": ["Commercial Grade", "Three Stage", "Industrial Use"],
     "specs": {
@@ -77,6 +84,7 @@
       "Power": "220V AC",
       "Warranty": "2 Years"
     },
-    "inStock": true
+    "inStock": true,
+    "featured": true
   }
 ]

@@ -1,15 +1,21 @@
 export interface Product {
   id: number
-  slug: string
+  slug?: string
   name: string
   category: string
-  price: string
+  // price fields are optional to support products that don't specify pricing yet
+  price?: string
   originalPrice?: string
-  images: string[]
+  // support either legacy `image` or new `images` array
+  image?: string
+  images?: string[]
+  caption?: string
   description: string
   features: string[]
-  specs: Record<string, string>
-  inStock: boolean
+  // specs and booleans can be optional
+  specs?: Record<string, string>
+  inStock?: boolean
+  featured?: boolean
 }
 
 export interface ProductPageProps {

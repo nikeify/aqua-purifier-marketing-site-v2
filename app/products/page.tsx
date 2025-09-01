@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import type { Product } from "@/types/product"
 import { ScrollAnimations } from "@/components/scroll-animations"
 import { EnquiryProvider } from "@/components/enquiry-context"
 import { EnquirySidebar } from "@/components/enquiry-sidebar"
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
-const products = [
+const products: Product[] = [
   {
     id: 1,
     name: "Premium Kitchen RO System",

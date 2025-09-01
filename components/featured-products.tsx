@@ -1,56 +1,31 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { ScrollAnimationWrapper } from "@/components/scroll-animations"
 import Link from "next/link"
+import type { Product } from "@/types/product"
+import productsData from "@/data/products.json"
+
+const allProducts = productsData as Product[]
 
 export function FeaturedProducts() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const products = [
-    {
-      name: "Aquaved Premium Kitchen RO",
-      image: "/aquaved-ro-kitchen.jpeg",
-      caption: "Advanced RO system with digital display and copper accents",
-      price: "₹18,999",
-    },
-    {
-      name: "Aquaved Fusion RO System",
-      image: "/aquaved-fusion-ro.jpeg",
-      caption: "Modern white and copper design with premium filtration",
-      price: "₹16,999",
-    },
-    {
-      name: "Aquaved Mineral Water Purifier",
-      image: "/aquaved-mineral-water.jpeg",
-      caption: "Compact design with Dr.AquaBerry innovative technology",
-      price: "₹14,999",
-    },
-    {
-      name: "Aquaved Smart Countertop",
-      image: "/aquaved-countertop-dispenser.jpeg",
-      caption: "Sleek countertop dispenser with touch controls",
-      price: "₹22,999",
-    },
-    {
-      name: "Aquaved Next Gen LED",
-      image: "/aquaved-nextgen-led.jpeg",
-      caption: "Advanced LED display with smart monitoring features",
-      price: "₹24,999",
-    },
-  ]
+  const products = useMemo(() => allProducts.filter(p => p.featured), [])
 
   const nextSlide = () => {
-    setCurrentSlide(prev => (prev + 1) % products.length)
+    setCurrentSlide(prev => (products.length ? (prev + 1) % products.length : 0))
   }
 
   const prevSlide = () => {
-    setCurrentSlide(prev => (prev - 1 + products.length) % products.length)
+    setCurrentSlide(prev => (products.length ? (prev - 1 + products.length) % products.length : 0))
   }
+
+  if (products.length === 0) return null
 
   return (
     <section id="products" className="bg-white py-20">
@@ -76,11 +51,11 @@ export function FeaturedProducts() {
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {products.map((product, index) => (
-                <div key={index} className="w-full flex-shrink-0">
+                <div key={product.id} className="w-full flex-shrink-0">
                   <Card className="mx-4 transform overflow-hidden bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                     <div className="group relative aspect-[4/3] overflow-hidden">
                       <Image
-                        src={product.image || "/placeholder.svg"}
+                        src={product.images?.[0] ?? product.image ?? "/placeholder.svg"}
                         alt={product.name}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         width={400}
@@ -95,12 +70,14 @@ export function FeaturedProducts() {
                       <p className="mb-4 leading-relaxed text-gray-600">{product.caption}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-2xl font-bold text-[#03045e]">{product.price}</span>
-                        <Button
-                          size="sm"
-                          className="transform rounded-full bg-[#03045e] px-6 text-white transition-all duration-300 hover:scale-105 hover:bg-[#02044b]"
-                        >
-                          View Details
-                        </Button>
+                        <Link href={product.slug ? `/products/${product.slug}` : `/products`}>
+                          <Button
+                            size="sm"
+                            className="transform rounded-full bg-[#03045e] px-6 text-white transition-all duration-300 hover:scale-105 hover:bg-[#02044b]"
+                          >
+                            View Details
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
