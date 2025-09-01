@@ -18,7 +18,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
             <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
               <div className="aspect-square overflow-hidden">
                 <Image
-                  src={product.images[0] || "/placeholder.svg"}
+                  src={product.images?.[0] || "/placeholder.svg"}
                   alt={product.name}
                   width={300}
                   height={300}
