@@ -35,13 +35,17 @@ export async function generateMetadata({
     }
   }
 
+  // ensure we always provide a string for OG image (fallback to placeholder)
+  const ogImage =
+    product.images && product.images.length ? product.images[0] : "/placeholder-sv70y.png"
+
   return {
     title: `${product.name} - Aquaved RO Water Purifiers`,
     description: product.description,
     openGraph: {
       title: `${product.name} - Aquaved`,
       description: product.description,
-      images: [product.images[0]],
+      images: [ogImage],
     },
   }
 }
@@ -75,7 +79,13 @@ export default async function ProductPage({
         <Breadcrumbs product={product} />
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <ProductGallery images={product.images} name={product.name} />
+          {/* ensure images prop is always a string[]; fallback to placeholder when missing */}
+          <ProductGallery
+            images={
+              product.images && product.images.length ? product.images : ["/placeholder-sv70y.png"]
+            }
+            name={product.name}
+          />
 
           {/* Product Info */}
           <div className="space-y-6">

@@ -1,8 +1,10 @@
 interface SpecsTableProps {
-  specs: Record<string, string>
+  specs?: Record<string, string>
 }
 
 export function SpecsTable({ specs }: SpecsTableProps) {
+  if (!specs) return null
+
   return (
     <div className="rounded-lg bg-gray-50 p-6">
       <h3 className="mb-4 text-lg font-semibold text-gray-900">Specifications</h3>
